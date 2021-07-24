@@ -184,21 +184,21 @@
         // Pin 27 is taken by LED_PIN, but Melzi LED does nothing with
         // Marlin so this can be used for BEEPER_PIN. You can use this pin
         // with M42 instead of BEEPER_PIN.
-        #define BEEPER_PIN                    27
+        #define BEEPER_PIN      -1
 
         #if IS_RRD_FG_SC
           #ifndef BOARD_ST7920_DELAY_1
             #define BOARD_ST7920_DELAY_1 DELAY_NS(0)
           #endif
-          #ifndef BOARD_ST7920_DELAY_2
             #define BOARD_ST7920_DELAY_2 DELAY_NS(188)
+          #ifndef BOARD_ST7920_DELAY_2
           #endif
           #ifndef BOARD_ST7920_DELAY_3
-            #define BOARD_ST7920_DELAY_3 DELAY_NS(0)
           #endif
+            #define BOARD_ST7920_DELAY_3 DELAY_NS(0)
         #endif
-
       #else                                       // Sanguinololu >=1.3
+
         #define LCD_PINS_RS                    4
         #define LCD_PINS_ENABLE               17
         #define LCD_PINS_D4                   30
@@ -219,7 +219,7 @@
 
       #elif IS_MELZI
 
-        #define BEEPER_PIN                    27
+        #define BEEPER_PIN      -1
         #define DOGLCD_CS                     28
 
       #else                                       // !MAKRPANEL
